@@ -1,4 +1,4 @@
-# Gold Market Forecasting (Aurum Regime Continuum)
+# Gold Market Forecasting | Aurum Regime Continuum
 
 ## Project Overview
 
@@ -7,6 +7,14 @@ This project explores whether daily gold price direction can be predicted using 
 The goal was not only to maximize prediction accuracy, but also to understand the limitations of candle-based forecasting in a highly macro-sensitive asset such as gold.
 
 ---
+
+## Experiment Results Summary
+
+| Experiment   | Model                      | Accuracy |
+| ------------ | -------------------------- | -------- |
+| Experiment 1 | Rule-Based Trading System  | 35.09%   |
+| Experiment 2 | Baseline ML (XGBoost)      | 31.64%   |
+| Experiment 3 | Wick-Enhanced ML (XGBoost) | 38.63%   |
 
 ## Dataset
 
@@ -96,24 +104,24 @@ Adding wick rejection and previous-candle memory improved performance significan
 
 ## Final Conclusions
 
-### 1. Gold OHLC alone has limited predictive power
+### 1. Gold OHLC data contains limited directional signal
 
-Even the best candle-based ML model plateaued below 40% accuracy.
+Even the best candle-based ML model achieved 38.63% accuracy, indicating that daily OHLC data alone provides limited predictive power for reliable direction forecasting.
 
 ### 2. Wick rejection improves short-term prediction
 
-Upper and lower wick behavior carried meaningful information about market rejection.
+Upper and lower wick features improved model accuracy by nearly 7%, showing that candle rejection behavior carries meaningful short-term market information.
 
 ### 3. Gold is highly non-stationary
 
-Gold reacts strongly to external macroeconomic conditions such as:
+Gold price behavior changes significantly across market regimes and reacts strongly to macroeconomic events such as:
 
-* Interest rates
-* Inflation
-* Central bank policy
-* Geopolitical shocks
+* interest rate changes
+* inflation
+* central bank policy
+* geopolitical uncertainty
 
-This makes purely technical prediction difficult.
+This makes purely technical forecasting challenging.
 
 ---
 
