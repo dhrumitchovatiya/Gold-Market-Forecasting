@@ -124,4 +124,4 @@ This makes purely technical prediction difficult.
 * NumPy
 * Scikit-learn
 * XGBoost
-* Matplotlib
+
